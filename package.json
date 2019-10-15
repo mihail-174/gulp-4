@@ -1,28 +1,34 @@
 {
-    "name": "gulp-pug-starter",
-    "description": "Frontend development with pleasure",
-    "author": "Andrey Gorokhov",
+    "name": "gulp",
+    "description": "",
+    "version": "1.0.0",
+    "author": {
+        "name": "Pridannikov Mikhail",
+        "url": "https://github.com/mihail-174"
+    },
     "repository": {
         "type": "git",
-        "url": "https://github.com/andreyalexeich/gulp-pug-starter.git"
+        "url": "https://github.com/mihail-174/gulp-new.git"
     },
     "license": "MIT",
     "scripts": {
         "dev": "gulp",
+        "clean": "gulp clean",
         "build": "gulp prod --production",
-        "build views": "gulp views --production",
-        "build styles": "gulp styles --production",
-        "build scripts": "gulp scripts --production",
-        "build images": "gulp images --production",
-        "build webp": "gulp webp --production",
-        "build sprites": "gulp sprites --production",
-        "build fonts": "gulp fonts --production",
-        "build favicons": "gulp favicons --production",
-        "build gzip": "gulp gzip --production",
+        "views": "gulp views --production",
+        "style": "gulp style --production",
+        "script": "gulp script --production",
+        "image": "gulp image --production",
+        "webp": "gulp webp --production",
+        "sprite": "gulp sprite --production",
+        "spritesvg": "gulp spritesvg --production",
+        "fonts": "gulp fonts --production",
+        "favicon": "gulp favicons --production",
+        "zip": "gulp zip --production",
         "lint:style": "stylelint \"src/**/*.scss\" --syntax=scss",
         "lint:style --fix": "stylelint \"src/**/*.scss\" --syntax=scss --fix"
     },
-    "devDependencies": {
+    "dependencies": {
         "@babel/core": "^7.4.3",
         "@babel/preset-env": "^7.4.3",
         "@babel/register": "^7.4.0",
@@ -41,8 +47,7 @@
         "gulp-group-css-media-queries": "^1.2.2",
         "gulp-if": "^2.0.2",
         "gulp-imagemin": "~6.0.0",
-        "gulp-plumber": "^1.2.0",
-        "gulp-pug": "^4.0.1",
+        "gulp-plumber": "^1.2.1",
         "gulp-rename": "^1.4.0",
         "gulp-replace": "^1.0.0",
         "gulp-sass": "~4.0.2",
@@ -60,11 +65,22 @@
         "stylelint": "^10.0.1",
         "stylelint-order": "^3.0.0",
         "stylelint-selector-bem-pattern": "^2.1.0",
-        "webpack": "~4.35.0",
-        "webpack-stream": "^5.2.1",
-        "yargs": "~13.2.4"
-    },
-    "dependencies": {
-        "smart-grid": "^2.1.2"
+        "yargs": "~13.2.4",
+        "bemto.jade": "^1.0.3",
+        "gulp-cached": "^1.1.1",
+        "gulp-changed": "^4.0.2",
+        "gulp-concat": "^2.6.1",
+        "gulp-filter": "^6.0.0",
+        "gulp-jade": "^1.1.0",
+        "gulp-jade-inheritance": "^0.5.5",
+        "gulp-js-inheritance": "^0.0.2",
+        "gulp-notify": "^3.2.0",
+        "gulp-plumber-error-handler": "^1.0.0",
+        "gulp-sass-inheritance": "^1.1.2",
+        "gulp-uglify": "^3.0.2",
+        "gulp-zip": "^5.0.1",
+        "gulp.spritesmith": "^6.11.0",
+        "smart-grid": "^2.1.2",
+        "vinyl-buffer": "^1.0.1"
     }
 }
