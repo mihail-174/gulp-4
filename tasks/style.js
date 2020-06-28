@@ -24,10 +24,10 @@ import debug from "gulp-debug";
 
 gulp.task('style', () => {
     return gulp.src([
-        'src/components/**/*.scss',
         'src/styles/**/*.scss',
         'src/vendors/**/*.scss',
-        'src/vendors/**/*.css'
+        'src/vendors/**/*.css',
+        'src/components/**/*.scss'
     ])
         .pipe(sourcemaps.init())
         .pipe(plumber({

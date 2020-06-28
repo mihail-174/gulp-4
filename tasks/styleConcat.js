@@ -9,7 +9,12 @@ import rename from "gulp-rename";
 import concat from 'gulp-concat';
 
 gulp.task("styleConcat", () => {
-    return gulp.src('src/components/**/*.scss')
+    return gulp.src([
+        'src/styles/**/*.scss',
+        'src/vendors/**/*.scss',
+        'src/vendors/**/*.css',
+        'src/components/**/*.scss'
+    ])
         .pipe(sass())
         .pipe(groupmedia())
         .pipe(autoprefixer({

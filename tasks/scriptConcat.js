@@ -8,20 +8,14 @@ import changed from 'gulp-changed';
 import uglify from 'gulp-uglify';
 import rename from "gulp-rename";
 import debug from "gulp-debug";
+import concat from 'gulp-concat';
 
-gulp.task("script", () => {
-    return gulp.src(['src/components/**/*.js', 'src/scripts/**/*.js', 'src/vendors/**/*.js'])
-        .pipe(plumber({
-            errorHandler: errorHandler(`Ошибка в \'JS\' task`)
-        }))
-        .pipe(cached('js'))
-        .pipe(changed('src/js/', {
-            extension: '.js'
-        }))
+gulp.task("scriptConcat", () => {
+    return gulp.src(['src/scripts/plugins.js', 'src/components/**/*.js', 'src/scripts/theme.js'])
         .pipe(uglify())
+        .pipe(concat('theme-concat.js'))
         .pipe(rename({
-            suffix: ".min",
-            dirname: '.'
+            suffix: ".min"
         }))
         .pipe(gulp.dest('dist/js'))
         .pipe(debug({
