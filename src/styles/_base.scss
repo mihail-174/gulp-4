@@ -121,9 +121,6 @@ table.nostyle {
         }
     }
 }
-button {
-    outline: 0;
-}
 
 @include max-screen(991px) {
     .table-m-column {
