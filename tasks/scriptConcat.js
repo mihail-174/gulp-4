@@ -1,6 +1,7 @@
 "use strict";
 
 import gulp from "gulp";
+import babel from "gulp-babel";
 import plumber from 'gulp-plumber';
 import errorHandler from 'gulp-plumber-error-handler';
 import cached from 'gulp-cached';
@@ -12,6 +13,9 @@ import concat from 'gulp-concat';
 
 gulp.task("scriptConcat", () => {
     return gulp.src(['src/scripts/plugins.js', 'src/components/**/*.js', 'src/scripts/theme.js'])
+        .pipe(babel({
+            presets: ["@babel/env"]
+        }))
         .pipe(uglify())
         .pipe(concat('theme-concat.js'))
         .pipe(rename({
