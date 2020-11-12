@@ -34,6 +34,7 @@
         "@babel/register": "^7.4.0",
         "babel-eslint": "~10.0.2",
         "babel-loader": "^8.0.5",
+        "babel-preset-env": "^1.7.0",
         "bem-tools-core": "bem-tools/bem-tools-core",
         "bem-tools-create": "bem-tools/bem-tools-create",
         "bemto.jade": "^1.0.3",

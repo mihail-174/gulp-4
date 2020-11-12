@@ -1,5 +1,3 @@
-"use strict";
-
 import gulp from "gulp";
 import babel from "gulp-babel";
 import plumber from "gulp-plumber";
@@ -22,7 +20,14 @@ gulp.task("script", () => {
         }))
         .pipe(sourcemaps.init())
         .pipe(babel({
-            presets: ["@babel/env"]
+            presets: [
+                [
+                    '@babel/preset-env',
+                    {
+                        modules: false
+                    }
+                ]
+            ]
         }))
         .pipe(uglify())
         .pipe(rename({
