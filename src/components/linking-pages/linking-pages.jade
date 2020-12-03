@@ -90,24 +90,6 @@ script.
 
 script.
     $(document).ready(function(){
-        $('.color-scheme__color').each(function(){
-            if ( $(this).data('color') === localStorage.getItem('selectedColor') ) {
-                $(this).addClass('active');
-            }
-        });
-        $('.color-scheme__color').on('click', function(){
-            var selectedColor = $(this).data('color');
-            localStorage.setItem('selectedColor', selectedColor);
-            location.reload();
-        });
-        $('<link>')
-            .attr('rel', 'stylesheet')
-            .attr('type', 'text/css')
-            .attr('href', 'css/color-scheme-' + localStorage.getItem('selectedColor') + '.css')
-            .appendTo('body');
-        $('.gulp-pages').find('a').on('click', function (){
-            var color = $('select#SelectColor').find('option:selected').attr('value');
-        });
         // ЗАКРЫВЕМ МЕНЮШКУ ПРИ КЛИКЕ ВНЕ
         $(document).click(function (event) {
             if ($(event.target).closest(".gulp-pages").length) return;

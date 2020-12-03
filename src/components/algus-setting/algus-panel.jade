@@ -1,0 +1,84 @@
++script('https://cdn.jsdelivr.net/npm/jquery@1.11.0/dist/jquery.min.js')
++script('https://cdn.jsdelivr.net/npm/jquery-once@2.2.0/jquery.once.min.js')
+
++b.algus-panel
+    +e.container
+        include algus-burger
+        +e.content
+            +e.nv
+                include algus-menu
+
+style.
+    .algus-panel {}
+    .algus-panel.open .algus-panel__container {
+        width: 100%;
+    }
+    .algus-panel.open .algus-panel__content {
+        width: calc(100% - 65px);
+        overflow: visible;
+    }
+    .algus-panel__container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+        background-color: bisque;
+        display: flex;
+        align-items: center;
+        box-shadow: 0 0 5px 0 #ccc;
+        transition: all 0.25s ease-in-out;
+    }
+    .algus-panel__content {
+        display: flex;
+        align-items: center;
+        grid-gap: 30px;
+        overflow: hidden;
+        background-color: bisque;
+        position: fixed;
+        top: 0;
+        left: 50px;
+        z-index: 1000;
+        width: 0;
+        height: 50px;
+    }
+    .algus-panel__nv {
+        flex: 1;
+    }
+
+script.
+    $(document).ready(function () {
+        // -----------------------------------------------
+
+        // ФУНКЦИЯ ВЫВОДА СПИСКА ФАЙЛОВ CSS И JS
+        window.printListCssJsFiles = function printListCssJsFiles() {
+            var body = document.body.innerHTML;
+            var pattern = new RegExp("(?<=\<\!\-\-include: ).*?(?=\-\-\>)", 'gi');
+            var comment = Array.from(new Set(body.match(pattern)));
+            console.groupCollapsed("ВЫВОД СПИСКА ФАЙЛОВ CSS И JS");
+            console.log(comment);
+            console.groupEnd();
+
+            // ВЫВОДИМ CSS И JS НА СТРАНИЦУ
+            comment.forEach(function (item) {
+                var name = item.match(/(?<=name:).*?(?=;)/gi);
+                var style = item.match(/style:true/gi);
+                var script = item.match(/script:true/gi);
+                if (script) {
+                    var tagScript = document.createElement("script");
+                    tagScript.src = `js/${name[0]}.min.js`;
+                    document.body.appendChild(tagScript);
+                }
+                if ( style ) {
+                    var tagLink = document.createElement("link");
+                    tagLink.rel = "stylesheet";
+                    tagLink.type = "text/css";
+                    tagLink.href = `css/${name[0]}.min.css`;
+                    document.body.appendChild(tagLink);
+                }
+            });
+        }
+
+        printListCssJsFiles();
+
+        // -----------------------------------------------
+    });
