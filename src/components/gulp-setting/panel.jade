@@ -1,23 +1,20 @@
-+script('https://cdn.jsdelivr.net/npm/jquery@1.11.0/dist/jquery.min.js')
-+script('https://cdn.jsdelivr.net/npm/jquery-once@2.2.0/jquery.once.min.js')
-
-+b.algus-panel
++b.gulp-panel
     +e.container
-        include algus-burger
+        include burger
         +e.content
             +e.nv
-                include algus-menu
+                include menu
 
 style.
-    .algus-panel {}
-    .algus-panel.open .algus-panel__container {
+    .gulp-panel {}
+    .gulp-panel.open .gulp-panel__container {
         width: 100%;
     }
-    .algus-panel.open .algus-panel__content {
+    .gulp-panel.open .gulp-panel__content {
         width: calc(100% - 65px);
         overflow: visible;
     }
-    .algus-panel__container {
+    .gulp-panel__container {
         position: fixed;
         top: 0;
         left: 0;
@@ -28,7 +25,7 @@ style.
         box-shadow: 0 0 5px 0 #ccc;
         transition: all 0.25s ease-in-out;
     }
-    .algus-panel__content {
+    .gulp-panel__content {
         display: flex;
         align-items: center;
         grid-gap: 30px;
@@ -41,12 +38,12 @@ style.
         width: 0;
         height: 50px;
     }
-    .algus-panel__nv {
+    .gulp-panel__nv {
         flex: 1;
     }
 
 script.
-    $(document).ready(function () {
+    document.addEventListener('DOMContentLoaded', function () {
         // -----------------------------------------------
 
         // ФУНКЦИЯ ВЫВОДА СПИСКА ФАЙЛОВ CSS И JS

@@ -1,5 +1,5 @@
 (function($) {
-    if (typeof Drupal !== 'undefined') {
+    if (typeof Drupal !== "undefined") {
         Drupal.behaviors.customThemeFile = {
             attach: function(context, settings) {
                 init();
@@ -14,7 +14,7 @@
     }
 
     $(document).ready(function(){
-        $('table').wrap('<div class="table-wrapper"></div>');
+        $("table").wrap("<div class='table-wrapper'></div>");
     });
 
 })(jQuery);

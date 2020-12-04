@@ -1,4 +1,4 @@
-+b.algus-menu
++b.gulp-menu
     +e.UL.list
         +e.LI.item
             +e.A.link(href="index.html") главная
@@ -7,43 +7,43 @@
         //+e.LI.item_expanded
         //    +e.A.link(href="javascript://")
         //        span другие страницы
-        //    +b.algus-menu-sub
+        //    +b.gulp-menu-sub
         //        +e.UL.list
         //            +e.LI.item
         //                +e.A.link(href="user-login.html") форма входа
 
 style.
-    .algus-menu__list {
+    .gulp-menu__list {
         margin: 0;
         display: flex;
         align-items: center;
         padding: 0;
     }
-    .algus-menu__item {
+    .gulp-menu__item {
         margin: 0;
     }
-    .algus-menu__item {
+    .gulp-menu__item {
         transition: all 0.2s ease-in-out;
     }
-    .algus-menu__item:before {
+    .gulp-menu__item:before {
         display: none;
     }
-    .algus-menu__item:hover {
+    .gulp-menu__item:hover {
         background-color: #fff1e0;
     }
-    .algus-menu__item:hover .algus-menu__link {
+    .gulp-menu__item:hover .gulp-menu__link {
         text-decoration: none;
         color: #d60e12;
     }
-    .algus-menu__item:hover .algus-menu-sub {
+    .gulp-menu__item:hover .gulp-menu-sub {
         opacity: 1;
         visibility: visible;
     }
-    .algus-menu__item_expanded .algus-menu__link span {
+    .gulp-menu__item_expanded .gulp-menu__link span {
         position: relative;
         padding-right: 13px;
     }
-    .algus-menu__item_expanded .algus-menu__link span::after {
+    .gulp-menu__item_expanded .gulp-menu__link span::after {
         content: '';
         position: absolute;
         top: 0;
@@ -55,7 +55,7 @@ style.
         margin: auto;
         height: 0;
     }
-    .algus-menu__link {
+    .gulp-menu__link {
         padding: 0 15px;
         color: #333;
         line-height: 1;
@@ -64,7 +64,7 @@ style.
         align-items: center;
         border: none;
     }
-    .algus-menu-sub {
+    .gulp-menu-sub {
         opacity: 0;
         visibility: hidden;
         position: absolute;
@@ -75,20 +75,20 @@ style.
         width: 230px;
         padding: 0 0 5px;
     }
-    .algus-menu-sub__list {
+    .gulp-menu-sub__list {
         margin: 0;
         padding: 0;
     }
-    .algus-menu-sub__item {
+    .gulp-menu-sub__item {
         margin: 0;
     }
-    .algus-menu-sub__item:before {
+    .gulp-menu-sub__item:before {
         display: none;
     }
-    .algus-menu-sub__item:hover .algus-menu-sub__link {
+    .gulp-menu-sub__item:hover .gulp-menu-sub__link {
         color: #d60e12;
     }
-    .algus-menu-sub__link {
+    .gulp-menu-sub__link {
         display: block;
         padding: 5px 15px;
         color: #333;

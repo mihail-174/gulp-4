@@ -3,7 +3,7 @@
 (function($){
     window.lightGallery = function(block, a) {
         $(block).find(a).each(function() {
-            $(this).attr('data-sub-html', $(this).find('img').attr('title'));
+            $(this).attr("data-sub-html", $(this).find("img").attr("title"));
         });
         $(block).lightGallery({
             selector: a,
@@ -13,5 +13,5 @@
             share: false,
             thumbnail: true
         });
-    }
+    };
 })(jQuery);

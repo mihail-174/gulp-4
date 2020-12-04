@@ -1,0 +1,96 @@
++b.gulp-burger
+    +e.menu.LABEL(for='gulp-burger-checkbox')
+        span
+    +e.checkbox.INPUT(type='checkbox')#gulp-burger-checkbox
+
+style.
+    .gulp-burger {}
+    /*.gulp-burger.active .gulp-burger__menu::before {*/
+    /*    content: "\f00d";*/
+    /*    font-weight: 100;*/
+    /*}*/
+    .gulp-burger.active .gulp-burger__menu span {
+        background-color: transparent;
+    }
+    .gulp-burger.active .gulp-burger__menu span:before {
+        transform: rotate(45deg);
+        top: 0;
+    }
+    .gulp-burger.active .gulp-burger__menu span:after {
+        transform: rotate(-45deg);
+        top: 0;
+    }
+    .gulp-burger__checkbox {
+        display: none;
+    }
+    .gulp-burger__menu {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50px;
+        width: 50px;
+        transition: all 0.2s ease-in-out;
+        cursor: pointer;
+        padding: 0;
+    }
+    .gulp-burger__menu:hover {
+        background-color: #fff1e0;
+    }
+    /*.gulp-burger__menu::before {*/
+    /*    content: "\f0c9";*/
+    /*    font-family: "Font Awesome 5 Pro";*/
+    /*    font-size: 30px;*/
+    /*    font-weight: 400;*/
+    /*    color: #333;*/
+    /*    line-height: 1;*/
+    /*}*/
+    .gulp-burger__menu span {
+        background-color: #000;
+        width: 25px;
+        height: 3px;
+        position: relative;
+        transition: all 0.25s ease-in-out;
+    }
+    .gulp-burger__menu span:before,
+    .gulp-burger__menu span:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        background-color: #000;
+        height: 3px;
+        transition: all 0.25s ease-in-out;
+    }
+    .gulp-burger__menu span:before {
+        top: -8px;
+    }
+    .gulp-burger__menu span:after {
+        bottom: -8px;
+    }
+
+script.
+    document.addEventListener('DOMContentLoaded', function () { // Аналог $(document).ready(function(){
+        if ( localStorage.getItem("gulp-burger") == "true" ) {
+            document.querySelector(".gulp-burger__checkbox").checked = true;
+        } else {
+            document.querySelector(".gulp-burger__checkbox").checked = false;
+
+        }
+        if ( document.querySelector(".gulp-burger__checkbox").checked ) {
+            document.querySelector(".gulp-panel").classList.add('open');
+            document.querySelector(".gulp-burger").classList.add('active');
+        } else {
+            document.querySelector(".gulp-panel").classList.remove('open');
+            document.querySelector(".gulp-burger").classList.remove('active');
+        }
+        document.querySelector(".gulp-burger__checkbox").addEventListener('click', function () {
+            localStorage.setItem("gulp-burger", document.querySelector(".gulp-burger__checkbox").checked );
+            if (document.querySelector(".gulp-burger__checkbox").checked) {
+                document.querySelector(".gulp-panel").classList.add('open');
+                document.querySelector(".gulp-burger").classList.add('active');
+            } else {
+                document.querySelector(".gulp-panel").classList.remove('open');
+                document.querySelector(".gulp-burger").classList.remove('active');
+            }
+        });
+    });
