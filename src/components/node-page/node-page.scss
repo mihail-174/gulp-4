@@ -1,0 +1,13 @@
+@import "../../styles/helpers/_helpers";
+
+.nd-page {}
+.nd-page__content {
+	max-width: 809px;
+}
+.nd-page__body {}
+.nd-page__gallery {
+    @include max-screen(767px) {
+        margin-left: -15px;
+        margin-right: -15px;
+    }
+}

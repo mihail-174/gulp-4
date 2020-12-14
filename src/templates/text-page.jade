@@ -1,0 +1,90 @@
+extends layout/default
+
+block variables
+    - const title = "Текстовая страница";
+    - const description = '';
+    - const keywords = '';
+    - const pageClass = 'no-front';
+
+block styles
+    //+style("https://cdn.jsdelivr.net/npm/normalize-css/normalize.css")
+    //+style("css/font-awesome.css")        // шрифтовые иконки
+    //+style("http://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css")
+    //+style('https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css')
+    //+style("https://cdn.jsdelivr.net/npm/lightgallery/dist/css/lightgallery.min.css")
+    //+style("css/lightgallery.css")
+    //+style("css/jquery.mCustomScrollbar.min.css")
+    //+style("css/scrollbar_1.css")         // кастомная стилизация полосы прокрутки
+    +style("css/common.min.css")                                // общие стили
+    //+style("css/system-drupal.css") // кастомные стили drupal элементов
+    //+style("css/nv-main-menu_1.css") // панель главного меню
+    //+style("css/search-result_1.css") // результаты поиска vuejs
+    //+style("css/wf_1.css") // общие стили для вебформ
+    //+style("css/fav_1.css") // избранное
+    //+style("css/cmp_1.css") // сравнение
+    //+style("css/bc_1.css") // хлебные крошки
+    //+style("css/bc-m.css") // хлебные крошки/ мобильные
+    //+style("css/nd-page_1.css") // текстовая страница (нода)
+    //+style("css/gallery_1.css") // галерея фотографий
+    //+style("css/close_1.css") // кнопка закрыть
+    //+style("css/hd-m.css") // шапка. мобильная
+    //+style("css/burger.css") // бургер
+    //+style("css/logo-m.css") // логотип мобильный
+    //+style("css/phone-m-btn.css") // кнопка телефона мобильная в шапке
+    //+style("css/search-m-btn.css") // кнопка поиска мобильная в шапке
+    //+style("css/search-m-panel.css") // панель поиска мобильная
+    //+style("css/menu-m-panel.css") // панель с мобильным меню
+    //+style("css/nv-m.css") // меню мобильной навигации
+    
+block scripts
+    //+script('https://cdn.jsdelivr.net/npm/jquery@1.11.0/dist/jquery.min.js')
+    //+script('https://cdn.jsdelivr.net/npm/jquery-once@2.2.0/jquery.once.min.js')
+    //+script("https://code.jquery.com/ui/1.12.1/jquery-ui.min.js")
+    //+script('https://cdn.jsdelivr.net/npm/lightgallery/dist/js/lightgallery-all.min.js')
+    //+script('https://cdn.jsdelivr.net/npm/inputmask/dist/min/jquery.inputmask.bundle.min.js')
+    //+script('https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js')
+    //+script("js/system-drupal.js") // кастомные скрипты drupal элементов
+    //+script('js/plugins.js') // мои плагины
+    //+script('js/lightgallery.js')
+    //+script('js/jquery.mCustomScrollbar.min.js')
+    //- +script('js/blazy.js') // плагин ленивая загрузка
+    //+script('js/nv-main-menu_1.js') // для панели главного меню
+    //+script('js/wf_1.js') // общие скрипты для вебформ
+    //+script('js/gallery_1.js') // галерея фотографий
+    //+script('js/hd-m.js') // шапка. мобильная
+    //+script('js/burger.js') // бургер
+    //+script('js/search-m-btn.js') // кнопка поиска мобильная в шапке
+    //+script('js/close_1.js') // кнопка закрыть
+    //+script('js/menu-m-panel.js') // панель с мобильным меню
+    //+script('js/theme.js') // общие скрипты
+
+block content
+    +b.wrapper
+        +b.header(style="font-size: 18px;height: 100px; border-bottom: 1px solid #333333;display: flex;justify-content: center;align-items: center;") Шапка
+        //include ../../components/hd/_1/hd_1
+        //include ../../components/hd/_2/hd_2
+        //include ../../components/hd/_3/hd_3
+        //include ../../components/mobile/hd-m/hd-m
+        //include ../../components/mobile/hd-m/search-m-panel/search-m-panel
+        //include ../../components/mobile/hd-m/menu-m-panel/menu-m-panel
+        //+b.title-panel
+        //    .container
+        //        include ../../components/bc_1/bc_1
+        //        include ../../components/mobile/bc-m/bc-m
+        //        +h1 Самосвалы КАМАЗ — распродажа!
+        //+b.system-region
+        //    +e.container.container
+        //        include ../../components/system-drupal/systemTabs
+        //        include ../../components/system-drupal/message-status
+        //        include ../../components/system-drupal/message-warning
+        //        include ../../components/system-drupal/message-error
+        //        include ../../components/system-drupal/message-error-webform
+        +b.mn-main
+            +e.container.container
+                .cn
+                    +b.MAIN.cn-main
+                        include ../components/node-page/node-page
+    //include ../../components/ft/_1/ft_1
+    //include ../../components/ft/_2/ft_2
+    //include ../../components/ft/_3/ft_3
+    // КОНЕЦ: обертка контента

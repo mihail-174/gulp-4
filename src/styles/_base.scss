@@ -8,14 +8,108 @@ body, div, table, tr, td, h1, h2, h3, li {
     position: relative;
 }
 body {
-    font-family: $font;
-    font-size: map-get($fontSize, norma);
-    font-weight: 400;
-    color: #4d4d4d;
-    line-height: 22px;
+    font-family: map_get($body, font-family);
+    font-size: $norma;
+    font-weight: map_get($body, font-weight);
+    line-height: map_get($body, line-height);
+    color: map_get($body, color);
     min-width: 970px;
     margin: 0;
 }
+h1 {
+    font-size: map_get($h1, font-size);
+    font-weight: map_get($h1, font-weight);
+    line-height: map_get($h1, line-height);
+    color: map_get($h1, color);
+    margin: map_get($h1, margin);
+}
+h2 {
+    font-size: map_get($h2, font-size);
+    font-weight: map_get($h2, font-weight);
+    line-height: map_get($h2, line-height);
+    color: map_get($h2, color);
+    margin: map_get($h2, margin);
+}
+h3 {
+    font-size: map_get($h3, font-size);
+    font-weight: map_get($h3, font-weight);
+    line-height: map_get($h3, line-height);
+    color: map_get($h3, color);
+    margin: map_get($h3, margin);
+}
+h4,
+h5,
+h6 {
+    font-size: map_get($h4, font-size);
+    font-weight: map_get($h4, font-weight);
+    line-height: map_get($h4, line-height);
+    color: map_get($h4, color);
+    margin: map_get($h4, margin);
+}
+p {
+    margin: map_get($p, margin);
+}
+a {
+    color: map_get($a, color);
+    text-decoration: map_get($a, text-decoration);
+    border-bottom: map_get($a, border-bottom);
+    outline: none;
+    &:hover {
+        color: map_get($a-hover, color);
+        text-decoration: map_get($a-hover, text-decoration);
+        border-bottom: map_get($a-hover, border-bottom);
+    }
+    &:focus {
+        color: map_get($a-hover, color);
+        text-decoration: map_get($a-hover, text-decoration);
+        border-bottom: map_get($a-hover, border-bottom);
+    }
+    &:active {
+        outline: none;
+    }
+}
+ol,
+ul {
+    margin: map_get($list, margin);
+    li {
+        list-style: map_get($li, list-style);
+        &:before {
+            position: absolute;
+        }
+    }
+}
+ul {
+    padding-left: map_get($ul, padding-left);
+    li {
+        &:before {
+            content: map_get($ul, before-content);
+            top: map_get($ul, before-top);
+            left: map_get($ul, before-left);
+            color: map_get($li, before-color);
+        }
+    }
+}
+ol {
+    counter-reset: li;
+    padding-left: map_get($ol, padding-left);
+    li {
+        &:before {
+            content: counter(li);
+            counter-increment: li;
+            top: map_get($ol, before-top);
+            left: map_get($ol, before-left);
+            color: map_get($li, before-color);
+        }
+    }
+}
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+
+
 blockquote, q {
     quotes: none;
 }
@@ -29,70 +123,26 @@ hr {
     border: none;
     background-color: #ededee;
 }
-a {
-    color: #0072bb;
-    text-decoration: none;
-    border-bottom: 1px solid #cce3f1;
-    outline: none;
-    &:hover {
-        color: #009ee2;
-        text-decoration: none;
-        border-color: transparent;
-    }
-    &:focus {
-        text-decoration: none;
-        outline: none;
-        border-color: transparent;
-    }
-    &:active {
-        outline: none;
-    }
-}
-h1 {
-    font-size: map-get($fontSize, h1);
-    margin: map-get($margin, h1);
-    line-height: map-get($lineHeight, h1);
-}
-h2 {
-    font-size: map-get($fontSize, h2);
-    margin: map-get($margin, h2);
-    line-height: map-get($lineHeight, h2);
-}
-h3 {
-    font-size: map-get($fontSize, h3);
-    margin: map-get($margin, h3);
-    line-height: map-get($lineHeight, h3);
-}
-p {
-    margin: map-get($margin, p);
-}
-ul {
-    margin: map-get($margin, ul);
-    li {
-        list-style: none;
-        &:before {
-            content: "\2022";
-            position: absolute;
-            top: 0;
-            left: -10px;
-        }
-    }
-}
-ol {
-    margin: map-get($margin, ol);
-}
-img {
-    display: block;
-    max-width: 100%;
-    height: auto;
-}
 table {
     width: 100%;
-    margin: map-get($margin, ol);
-    border: none;
     border-collapse: collapse;
+    margin: map-get($table, margin);
+    th,
+    td {
+        vertical-align: top;
+        padding: 5px;
+        border: 1px solid #D6D6D6;
+        color: #616161;
+        line-height: 20px;
+    }
+}
+table.custom {
+    width: 100%;
+    border: none;
     border-spacing: 0;
+    background-color: #f8f8f8;
     thead {
+        background-color: #fff;
         th, td {}
     }
     tbody {
@@ -102,9 +152,7 @@ table {
         background-color: transparent;
     }
     td, th {
-        border: none;
-        padding: 0 14px 0;
-        line-height: 36px;
+        padding: 18px 20px 16px;
     }
 }
 table.nostyle {

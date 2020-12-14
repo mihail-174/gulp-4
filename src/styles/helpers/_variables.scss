@@ -1,7 +1,103 @@
+$norma:                 14px;    // основной размер шрифта
+$normaMinus:            14px;    // уменьшенный размер шрифта
+$normaPlus:             16px;    // увеличенный размер шрифта
+
+$font: arial;
+
+$body: (
+    font-family:        $font,
+    font-size:          $norma,
+    font-weight:        400,
+    line-height:        1.4,
+    color:              #333,
+);
+$h1: (
+    font-size:          42px,
+    font-weight:        700,
+    line-height:        1.0951,
+    color:              #333,
+    margin:             64px 0 42px,
+);
+$h2: (
+    font-size:          32px,
+    font-weight:        700,
+    line-height:        40px,
+    color:              #333,
+    margin:             80px 0 42px,
+);
+$h3: (
+    font-size:          24px,
+    font-weight:        700,
+    line-height:        40px,
+    color:              #333,
+    margin:             70px 0 17px,
+);
+$h4: (
+    font-size:          $norma,
+    font-weight:        700,
+    line-height:        1.4,
+    color:              #333,
+    margin:             10px 0,
+);
+$p: (
+    margin:             30px 0,
+);
+$a: (
+    color:              #616161,
+    text-decoration:    none,
+    border-bottom:      1px solid #616161,
+);
+$a-hover: (
+    color:              #ae2121,
+    text-decoration:    none,
+    border-bottom:      transparent,
+);
+
+// \002D - ДЕФИС
+// \2022 - ТОЧКА
+$list: (
+    margin:             30px 0,
+);
+$ul: (
+    padding-left:       10px,
+    before-content:     "\002D",
+    before-top:         0,
+    before-left:        -12px,
+);
+$ol: (
+    padding-left:       25px,
+    before-top:         0,
+    before-left:        -22px,
+);
+$li: (
+    margin:             8px,
+    list-style:         none,
+    before-color:       #d91e36,
+    before-font-size:   20px,
+);
+$table: (
+    margin:             30px 0,
+);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // Задний фон для модальных окон
 $overlayBackgroundColor: rgba(0, 0, 0, 0.5);
 
-$font: Roboto, arial;
 $rouble: Rouble;
 
 $fontSize: (
