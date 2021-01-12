@@ -17,10 +17,9 @@ import changed from 'gulp-changed';
 
 gulp.task("image", () => {
     return gulp.src([
-        "src/img/**/*.{jpg,jpeg,png,gif,svg}",
+        "src/img/**/*.{jpg,jpeg,png,gif,svg,ico}",
         '!src/img/icons/*.png',
-        '!src/img/icons-svg/*.svg',
-        '!src/img/favicon/*.*'
+        '!src/img/icons-svg/*.svg'
     ])
         .pipe(cached('images'))
         .pipe(changed('src/img/', {
